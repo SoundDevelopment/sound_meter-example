@@ -33,7 +33,7 @@ SoundMeterExampleAudioProcessorEditor::SoundMeterExampleAudioProcessorEditor (So
 
    // Use (or don't use) the label strip on the side of the meters.
    // This label-strip doubles as a master fader when faders are enabled...
-   m_inputMeters.useLabelStrip (true);
+   m_inputMeters.setLabelStripPosition (sd::SoundMeter::LabelStripPosition::right);
 
    // Set the meter CHANNEL FORMAT (determines number of meter and type description)...
    m_inputMeters.setChannelFormat (p.getOutputFormat());
