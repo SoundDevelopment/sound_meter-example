@@ -28,7 +28,7 @@ SoundMeterExampleAudioProcessorEditor::SoundMeterExampleAudioProcessorEditor (So
    meterOptions.tickMarksEnabled      = true;
    meterOptions.tickMarksOnTop        = true;
    meterOptions.tickMarks             = { -1.0f, -3.0f, -6.0f, -12.0f, -18.0f, -36.0f };  // Positions (in decibels) of the tick-marks.
-   meterOptions.decayTime_ms          = 2000.0f;
+   meterOptions.decayTime_ms          = 1000.0f;
    m_inputMeters.setOptions (meterOptions);
 
    // Use (or don't use) the label strip on the side of the meters.
