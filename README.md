@@ -1,4 +1,6 @@
 # sound_meter example
-Simple [juce](https://juce.com/) application demonstrating the use of the sound_meter module.
+*by Marcel Huibers | [Sound Development](https://www.sounddevelopment.nl) 2021*
+
 <img align="right" src="https://www.sounddevelopment.nl/sd/resources/images/sound_meter/sound_meter.gif"><br>
-*by Marcel Huibers | Sound Development 2021*
+
+Simple [juce](https://juce.com/) application demonstrating the use of the [sound_meter](https://github.com/SoundDevelopment/sound_meter) module.
