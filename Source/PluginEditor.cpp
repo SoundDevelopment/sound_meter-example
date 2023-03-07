@@ -30,7 +30,7 @@ SoundMeterExampleAudioProcessorEditor::SoundMeterExampleAudioProcessorEditor (So
 
    // Set the meter's segment options ...
    m_inputMeters.setOptions (meterOptions);
-   std::vector<sd::SoundMeter::SegmentOptions> segmentOptions = { { { -60.0f, -18.0f }, { 0.0f, 0.5f }, juce::Colours::green, juce::Colours::green },
+   std::vector<sd::SoundMeter::SegmentOptions> segmentOptions = { { { -60.0f, -18.0f }, { 0.0f, 0.5f }, juce::Colours::white, juce::Colours::green },
                                                                   { { -18.0f, -3.0f }, { 0.5f, 0.90f }, juce::Colours::green, juce::Colours::yellow },
                                                                   { { -3.0f, 0.0f }, { 0.90f, 1.0f }, juce::Colours::yellow, juce::Colours::red } };
    m_inputMeters.setMeterSegments (segmentOptions);
