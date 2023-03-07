@@ -17,19 +17,23 @@ SoundMeterExampleAudioProcessorEditor::SoundMeterExampleAudioProcessorEditor (So
 
    // Set the meter OPTONS ...
    sd::SoundMeter::Options meterOptions;
-   meterOptions.faderEnabled = false;  // Enable or disable the 'fader' overlay. Use the sd::SoundMeter::MetersComponent::FadersChangeListener to get the fader value updates.
+   meterOptions.faderEnabled = true;  // Enable or disable the 'fader' overlay. Use the sd::SoundMeter::MetersComponent::FadersChangeListener to get the fader value updates.
    meterOptions.headerEnabled         = false;           // Enable the 'header' part above the meter, displaying the channel ID.
    meterOptions.valueEnabled          = false;           // Enable the 'value' part below the level, displaying the peak level.
    meterOptions.refreshRate           = refreshRate_hz;  // Frequency of the meter updates (when using the internal timer).
    meterOptions.useGradient           = true;            // Use gradients to fill the meter (hard segment boundaries otherwise).
    meterOptions.showPeakHoldIndicator = false;           // Show the peak hold indicator (double click value to reset).
-   meterOptions.peakSegment_db        = -3.0f;           // -3.0 dB peak segment divider.
-   meterOptions.warningSegment_db     = -12.0f;          // -12.0 dB warning segment indicator.
    meterOptions.tickMarksEnabled      = true;            // Enable tick-marks. Divider lines at certain levels on the meter and label strip.
    meterOptions.tickMarksOnTop        = true;            // Put the tick-marks above the level readout.
-   meterOptions.tickMarks             = { -1.0f, -3.0f, -6.0f, -12.0f, -18.0f, -36.0f };  // Positions (in decibels) of the tick-marks.
+   meterOptions.tickMarks             = { -1.0f, -3.0f, -6.0f, -12.0f, -18.0f, -30.0f, -40.0f, -50.0f };  // Positions (in decibels) of the tick-marks.
    meterOptions.decayTime_ms          = 1000.0f;                                          // The meter will take 1000 ms to decay to 0.
+
+   // Set the meter's segment options ...
    m_inputMeters.setOptions (meterOptions);
+   std::vector<sd::SoundMeter::SegmentOptions> segmentOptions = { { { -60.0f, -18.0f }, { 0.0f, 0.5f }, juce::Colours::green, juce::Colours::green },
+                                                                  { { -18.0f, -3.0f }, { 0.5f, 0.90f }, juce::Colours::green, juce::Colours::yellow },
+                                                                  { { -3.0f, 0.0f }, { 0.90f, 1.0f }, juce::Colours::yellow, juce::Colours::red } };
+   m_inputMeters.setMeterSegments (segmentOptions);
 
    // Use (or don't use) the label strip on the side of the meters.
    // This label-strip doubles as a master fader when faders are enabled...

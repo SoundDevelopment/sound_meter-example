@@ -2,12 +2,12 @@
 
 <JUCERPROJECT id="lV7T1W" name="SoundMeterExample" projectType="audioplug"
               useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
-              companyName="Sound Development" companyCopyright="&#169; 2021 Sound Development"
+              companyName="Sound Development" companyCopyright="&#169; 2023 Sound Development"
               companyWebsite="http://www.sounddevelopment.nl" companyEmail="info@sounddevelopment.nl"
               pluginDesc="Example using the sound_meter juce module." pluginManufacturer="Sound Development"
               pluginManufacturerCode="SdDv" pluginCode="SMEx" aaxIdentifier="com.sounddevelopment.soundmeterexample"
               pluginVST3Category="Analyzer" pluginVSTCategory="kPlugCategAnalysis"
-              cppLanguageStandard="14">
+              version="0.9">
   <MAINGROUP id="CRH6h6" name="SoundMeterExample">
     <GROUP id="{564F6F86-CE71-5AAD-8572-06053DD31894}" name="Source">
       <FILE id="ycxdXn" name="PluginProcessor.cpp" compile="1" resource="0"

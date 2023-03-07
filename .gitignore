@@ -2,11 +2,9 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-Builds/VisualStudio2019/.vs/
-Builds/VisualStudio2019/x64/
-Builds/MacOSX/build/
+Builds/
 JuceLibraryCode/
-JuceLibraryCode/BinaryData.*
+
 
 SourceTrail/*.srctrldb
 *.obj
