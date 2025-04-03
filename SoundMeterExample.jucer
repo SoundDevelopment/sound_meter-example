@@ -2,12 +2,12 @@
 
 <JUCERPROJECT id="lV7T1W" name="SoundMeterExample" projectType="audioplug"
               useAppConfig="0" addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1"
-              companyName="Sound Development" companyCopyright="&#169; 2023 Sound Development"
+              companyName="Sound Development" companyCopyright="&#169; 2025 Sound Development"
               companyWebsite="http://www.sounddevelopment.nl" companyEmail="info@sounddevelopment.nl"
               pluginDesc="Example using the sound_meter juce module." pluginManufacturer="Sound Development"
               pluginManufacturerCode="SdDv" pluginCode="SMEx" aaxIdentifier="com.sounddevelopment.soundmeterexample"
               pluginVST3Category="Analyzer" pluginVSTCategory="kPlugCategAnalysis"
-              version="0.9">
+              version="1.01">
   <MAINGROUP id="CRH6h6" name="SoundMeterExample">
     <GROUP id="{564F6F86-CE71-5AAD-8572-06053DD31894}" name="Source">
       <FILE id="ycxdXn" name="PluginProcessor.cpp" compile="1" resource="0"
@@ -19,7 +19,8 @@
       <FILE id="u8x7UN" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
   </MAINGROUP>
-  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"
+               SDTK_ENABLE_FADER="0"/>
   <EXPORTFORMATS>
     <VS2022 targetFolder="Builds/VisualStudio2022">
       <CONFIGURATIONS>
@@ -41,34 +42,9 @@
         <MODULEPATH id="juce_graphics" path="E:\Data\Programming\Library\JUCE\modules"/>
         <MODULEPATH id="juce_gui_basics" path="E:\Data\Programming\Library\JUCE\modules"/>
         <MODULEPATH id="juce_gui_extra" path="E:\Data\Programming\Library\JUCE\modules"/>
-        <MODULEPATH id="sound_meter" path="E:\Data\Programming\Library\UserJuceModules"/>
+        <MODULEPATH id="sound_meter" path="Modules"/>
       </MODULEPATHS>
     </VS2022>
-    <VS2019 targetFolder="Builds/VisualStudio2019">
-      <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" targetName="SoundMeterExample"/>
-        <CONFIGURATION isDebug="0" name="Profile" targetName="SoundMeterExample" warningsAreErrors="1"
-                       alwaysGenerateDebugSymbols="1" debugInformationFormat="ProgramDatabase"
-                       optimisation="4"/>
-        <CONFIGURATION isDebug="0" name="Release" targetName="SoundMeterExample" useRuntimeLibDLL="0"
-                       optimisation="4"/>
-      </CONFIGURATIONS>
-      <MODULEPATHS>
-        <MODULEPATH id="juce_audio_basics" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_plugin_client" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_core" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="../../../JUCE/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="../../../JUCE/modules"/>
-        <MODULEPATH id="sound_meter" path="../../Library/UserJuceModules"/>
-      </MODULEPATHS>
-    </VS2019>
     <XCODE_MAC targetFolder="Builds/MacOSX" microphonePermissionNeeded="1" microphonePermissionsText="Meter shows the level of the microphone input."
                hardenedRuntime="0" hardenedRuntimeOptions="com.apple.security.device.audio-input">
       <CONFIGURATIONS>
@@ -77,7 +53,7 @@
         <CONFIGURATION isDebug="0" name="Release"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="sound_meter" path="../../juce"/>
+        <MODULEPATH id="sound_meter" path="Modules"/>
         <MODULEPATH id="juce_gui_extra" path="../../juce"/>
         <MODULEPATH id="juce_gui_basics" path="../../juce"/>
         <MODULEPATH id="juce_graphics" path="../../juce"/>
@@ -107,7 +83,7 @@
     <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
-    <MODULE id="sound_meter" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="sound_meter" showAllCode="1" useLocalCopy="0" useGlobalPath="0"/>
   </MODULES>
   <LIVE_SETTINGS>
     <WINDOWS/>

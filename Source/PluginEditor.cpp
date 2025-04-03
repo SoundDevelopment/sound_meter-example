@@ -17,8 +17,8 @@ SoundMeterExampleAudioProcessorEditor::SoundMeterExampleAudioProcessorEditor (So
 
    // Set the meter OPTONS ...
    sd::SoundMeter::Options meterOptions;
-   meterOptions.faderEnabled = true;  // Enable or disable the 'fader' overlay. Use the sd::SoundMeter::MetersComponent::FadersChangeListener to get the fader value updates.
-   meterOptions.headerEnabled         = false;           // Enable the 'header' part above the meter, displaying the channel ID.
+   meterOptions.faderEnabled = false;  // Enable or disable the 'fader' overlay. Use the sd::SoundMeter::MetersComponent::FadersChangeListener to get the fader value updates.
+   meterOptions.headerEnabled         = true;           // Enable the 'header' part above the meter, displaying the channel ID.
    meterOptions.valueEnabled          = false;           // Enable the 'value' part below the level, displaying the peak level.
    meterOptions.refreshRate           = refreshRate_hz;  // Frequency of the meter updates (when using the internal timer).
    meterOptions.useGradient           = true;            // Use gradients to fill the meter (hard segment boundaries otherwise).
@@ -26,10 +26,14 @@ SoundMeterExampleAudioProcessorEditor::SoundMeterExampleAudioProcessorEditor (So
    meterOptions.tickMarksEnabled      = true;            // Enable tick-marks. Divider lines at certain levels on the meter and label strip.
    meterOptions.tickMarksOnTop        = true;            // Put the tick-marks above the level readout.
    meterOptions.tickMarks             = { -1.0f, -3.0f, -6.0f, -12.0f, -18.0f, -30.0f, -40.0f, -50.0f };  // Positions (in decibels) of the tick-marks.
-   meterOptions.decayTime_ms          = 1000.0f;                                          // The meter will take 1000 ms to decay to 0.
+   meterOptions.decayTime_ms          = 1000.0f;                                                          // The meter will take 1000 ms to decay to 0.
 
    // Set the meter's segment options ...
    m_inputMeters.setOptions (meterOptions);
+
+   // Set the meter SEGMENTS ...
+   // Every segment has a range in decibels (levelRange) and a range in the meter (from 0.0 to 1.0).
+   // Additionally you can set the colours of the segment and the next segment (for gradients).
    std::vector<sd::SoundMeter::SegmentOptions> segmentOptions = { { { -60.0f, -18.0f }, { 0.0f, 0.5f }, juce::Colours::white, juce::Colours::green },
                                                                   { { -18.0f, -3.0f }, { 0.5f, 0.90f }, juce::Colours::green, juce::Colours::yellow },
                                                                   { { -3.0f, 0.0f }, { 0.90f, 1.0f }, juce::Colours::yellow, juce::Colours::red } };
