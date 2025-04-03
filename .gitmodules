@@ -1,0 +1,3 @@
+[submodule "Modules/sound_meter"]
+	path = Modules/sound_meter
+	url = git@github.com:SoundDevelopment/sound_meter.git
