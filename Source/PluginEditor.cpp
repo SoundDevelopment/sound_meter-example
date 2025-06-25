@@ -18,7 +18,12 @@ SoundMeterExampleAudioProcessorEditor::SoundMeterExampleAudioProcessorEditor (So
    // Set the meter OPTONS ...
    sd::SoundMeter::Options meterOptions;
    meterOptions.faderEnabled = false;  // Enable or disable the 'fader' overlay. Use the sd::SoundMeter::MetersComponent::FadersChangeListener to get the fader value updates.
-   meterOptions.headerEnabled         = true;           // Enable the 'header' part above the meter, displaying the channel ID.
+
+#if SDTK_ENABLE_FADER
+   meterOptions.faderEnabled = true;
+#endif
+
+   meterOptions.headerEnabled         = true;            // Enable the 'header' part above the meter, displaying the channel ID.
    meterOptions.valueEnabled          = false;           // Enable the 'value' part below the level, displaying the peak level.
    meterOptions.refreshRate           = refreshRate_hz;  // Frequency of the meter updates (when using the internal timer).
    meterOptions.useGradient           = true;            // Use gradients to fill the meter (hard segment boundaries otherwise).
